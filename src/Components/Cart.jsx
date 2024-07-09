@@ -14,13 +14,17 @@ export const Cart = () => {
 
       {cart.map((item) => (
         <div key={item.id}>
-          <div className="container-fluid d-flex align-items-center border-bottom">
+          <div className="container-fluid p-0 d-flex flex-column border-bottom flex-md-row align-items-md-center">
             <div className="image-container">
-              <img src={item.thumbnail} style={{ width: "auto", height: "100%" }} alt=""/>
+              <img
+                src={item.thumbnail}
+                style={{ width: "auto", height: "100%" }}
+                alt=""
+              />
             </div>
 
-            <div className="container-fluid">
-              <div className="container d-flex justify-content-between align-items-start">
+            <div className="container-fluid p-0">
+              <div className="container d-flex flex-column flex-md-row justify-content-md-between align-items-md-end align-items-xl-start">
                 <div>
                   <h3>{item.title}</h3>
                   <h6>{item.brand}</h6>
@@ -79,7 +83,7 @@ export const Cart = () => {
 
                 <div className="d-flex justify-content-end align-items-center">
                   <FontAwesomeIcon icon={faIndianRupeeSign} />
-                  <h3>{(item.price).toFixed(2)}</h3>
+                  <h3>{item.price.toFixed(2)}</h3>
                 </div>
               </div>
               <div className="container d-flex justify-content-end">
@@ -92,7 +96,7 @@ export const Cart = () => {
           </div>
         </div>
       ))}
-      <div className="container p-4">
+      <div className="container pt-4 p-md-4">
         <h6 className="d-flex justify-content-between align-items-center">
           <span>SUB TOTAL:</span>{" "}
           <span>
